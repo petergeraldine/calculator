@@ -5,8 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
 
-    <!-- IMPORTANT: Fixes GitHub Pages pathing -->
+    <!-- Fixes GitHub Pages routing -->
     <base href="/calculator/">
+
+    <!-- Force full-screen layout -->
+    <style>
+      html, body, #root {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
   </head>
 
   <body>
@@ -16,3 +27,4 @@
     <script src="dist/expo/static/js/web/index-14fe743a44a8d6be23f9601cdc745fd1.js"></script>
   </body>
 </html>
+
