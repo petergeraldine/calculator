@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
 
-    <!-- Correct iPhone viewport handling -->
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -11,11 +10,9 @@
 
     <title>Calculator</title>
 
-    <!-- GitHub Pages base path -->
     <base href="/calculator/">
 
     <style>
-      /* Remove all browser padding and force full black background */
       html, body {
         margin: 0;
         padding: 0;
@@ -25,26 +22,31 @@
         overflow: hidden;
       }
 
-      /* Safe area support for iPhone Safari */
       body {
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
         background: #000;
       }
 
-      /* Expo root container */
+      /* Root container */
       #root {
         height: 100%;
         width: 100%;
         background: #000;
 
-        /* NEW: push calculator UI to the bottom */
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
       }
 
-      /* Portrait lock for web */
+      /* ⭐ NEW: Force Expo's internal container to fill the screen */
+      #root > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
       @media screen and (orientation: landscape) {
         body {
           transform: rotate(90deg);
@@ -61,7 +63,6 @@
   <body>
     <div id="root"></div>
 
-    <!-- Expo web bundle -->
     <script src="dist/expo/static/js/web/index-14fe743a44a8d6be23f9601cdc745fd1.js"></script>
   </body>
 </html>
