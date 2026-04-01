@@ -11,11 +11,11 @@
 
     <title>Calculator</title>
 
-    <!-- Keep your GitHub Pages base path -->
+    <!-- GitHub Pages base path -->
     <base href="/calculator/">
 
-    <!-- Global fixes for Safari white bars + safe areas + portrait lock -->
     <style>
+      /* Remove all browser padding and force full black background */
       html, body {
         margin: 0;
         padding: 0;
@@ -32,11 +32,16 @@
         background: #000;
       }
 
-      /* Ensure Expo root fills the screen */
+      /* Expo root container */
       #root {
         height: 100%;
         width: 100%;
         background: #000;
+
+        /* NEW: push calculator UI to the bottom */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
       }
 
       /* Portrait lock for web */
@@ -56,7 +61,7 @@
   <body>
     <div id="root"></div>
 
-    <!-- Your Expo web bundle -->
+    <!-- Expo web bundle -->
     <script src="dist/expo/static/js/web/index-14fe743a44a8d6be23f9601cdc745fd1.js"></script>
   </body>
 </html>
