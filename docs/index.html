@@ -2,20 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Correct iPhone viewport handling -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
     <title>Calculator</title>
 
-    <!-- Fixes GitHub Pages routing -->
+    <!-- Keep your GitHub Pages base path -->
     <base href="/calculator/">
 
-    <!-- Force full-screen layout -->
+    <!-- Global fixes for Safari white bars + safe areas + portrait lock -->
     <style>
-      html, body, #root {
+      html, body {
         margin: 0;
         padding: 0;
         height: 100%;
         width: 100%;
+        background: #000;
         overflow: hidden;
+      }
+
+      /* Safe area support for iPhone Safari */
+      body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        background: #000;
+      }
+
+      /* Ensure Expo root fills the screen */
+      #root {
+        height: 100%;
+        width: 100%;
+        background: #000;
+      }
+
+      /* Portrait lock for web */
+      @media screen and (orientation: landscape) {
+        body {
+          transform: rotate(90deg);
+          transform-origin: center;
+          width: 100vh;
+          height: 100vw;
+          overflow: hidden;
+          background: #000;
+        }
       }
     </style>
   </head>
@@ -23,8 +56,7 @@
   <body>
     <div id="root"></div>
 
-    <!-- Load the Expo web bundle -->
+    <!-- Your Expo web bundle -->
     <script src="dist/expo/static/js/web/index-14fe743a44a8d6be23f9601cdc745fd1.js"></script>
   </body>
 </html>
-
